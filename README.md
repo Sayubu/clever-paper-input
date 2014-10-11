@@ -5,7 +5,7 @@ See the [component page](http://rsamec.github.io/clever-paper-input) for more in
 
 ## Getting Started
 
-We've put together a [guide to clever-paper-input](http://rsamec.github.io/clever-paper-input/demo.html) to help get you rolling.
+We've put together a [demo to clever-paper-input](http://rsamec.github.io/clever-paper-input/components/clever-paper-input/demo.html) to help get you rolling.
 
 ## Testing Your Element
 
