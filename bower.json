@@ -1,0 +1,7 @@
+{
+  "name": "clever-paper-input#gh-pages",
+  "private": true,
+  "dependencies": {
+    "clever-paper-input": "rsamec/clever-paper-input#master"
+  }
+}
