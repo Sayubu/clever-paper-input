@@ -25,9 +25,9 @@ Element providing solution to no problem in particular.
    </clever-paper-input>
 
 @element clever-paper-input
-@blurb Element providing solution to no problem in particular.
+@blurb Input element with validation support and dirty checking.
 @status alpha
-@homepage http://polymerlabs.github.io/clever-paper-input
+@homepage http://rsamec.github.io/clever-paper-input
 -->
 <polymer-element name="clever-paper-input"  extends="paper-input" attributes="rule">
 
@@ -70,6 +70,7 @@ Element providing solution to no problem in particular.
          * @method ruleChanged
          */
         ruleChanged:function(oldVal, newVal, args){
+            if (this.rule === undefined) return;
             this.rule.ErrorsChanged.add(this.updateCustomValidity.bind(this));
         },
 
@@ -80,7 +81,7 @@ Element providing solution to no problem in particular.
          */
         updateValidity_: function() {
             if (this.$.input.willValidate) {
-                this.invalid = this.dirty && (this.rule.HasErrors || !this.$.input.validity.valid);
+                this.invalid = this.dirty && ((this.rule !== undefined && this.rule.HasErrors) || !this.$.input.validity.valid);
             }
         },
         /**
@@ -90,7 +91,7 @@ Element providing solution to no problem in particular.
          */
         updateCustomValidity: function () {
             this.dirty = true;
-            this.setCustomValidity(this.rule.ErrorMessage);
+            if (this.rule !== undefined)  this.setCustomValidity(this.rule.ErrorMessage);
         }
     });
 
